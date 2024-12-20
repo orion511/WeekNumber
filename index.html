@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Week Number</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            font-size: 36px;
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+    <div id="weekNumber"></div>
+    <script>
+        const today = new Date();
+        const startOfYear = new Date(today.getFullYear(), 0, 1);
+        const days = Math.floor((today - startOfYear) / (24 * 60 * 60 * 1000));
+        const week = Math.ceil((days + startOfYear.getDay() + 1) / 7);
+        document.getElementById('weekNumber').innerText = `Week ${week}`;
+    </script>
+</body>
+</html>
